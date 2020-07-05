@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "MTS": {
+    "mts": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "mts",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -28,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "./node_modules/normalize.css/normalize.css",
+              "src/styles.scss"
             ],
             "scripts": []
           },
@@ -66,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "MTS:build"
+            "browserTarget": "mts:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "MTS:build:production"
+              "browserTarget": "mts:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "MTS:build"
+            "browserTarget": "mts:build"
           }
         },
         "test": {
@@ -92,7 +93,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.sass"
+              "./node_modules/normalize.css/normalize.css",
+              "src/styles.scss"
             ],
             "scripts": []
           }
@@ -114,15 +116,15 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "MTS:serve"
+            "devServerTarget": "mts:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "MTS:serve:production"
+              "devServerTarget": "mts:serve:production"
             }
           }
         }
       }
     }},
-  "defaultProject": "MTS"
+  "defaultProject": "mts"
 }
